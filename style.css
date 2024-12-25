@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+BE+VLG+Guides&display=swap');
+
+.titulo{
+    font-family: "Dancing Script", serif;
+    font-size: 50px;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 100px;
+}
+.heart {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: #e91e63;
+    transform: rotate(-45deg);
+    animation: fall 7s infinite ease-in-out;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #e91e63;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -15px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 15px;
+    top: 0;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(-45deg);
+      opacity: 0.5;
+    }
+  }
+
+button {
+    background-color: #7d41d7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#note-display {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#remaining-count {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Recipiente estilo frasco */
+.jar {
+    width: 200px;
+    height: 250px;
+    margin: 0 auto;
+    background-image: url('images/frasco.png');
+    /* Ruta de tu imagen aquí */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    border-radius: 50px 50px 20px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.note {
+    width: 180px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffeaa7;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    visibility: hidden;
+    opacity: 0;
+    animation: note-rise 8s ease-out forwards;
+}
+
+
+@keyframes note-rise {
+    0% {
+        bottom: 10px;
+        opacity: 0;
+    }
+
+    50% {
+        bottom: 100px;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 200px;
+        opacity: 0;
+    }
+}
